@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TestSoftimApi</name>
+    </assembly>
+    <members>
+        <member name="M:TestSoftimApi.Controllers.CustomersController.ReadCustomersAsync">
+            <summary>
+            Returns a list of customers by date from-to
+            </summary>
+            <returns>No content</returns>
+            <response code="200">Returns a list of all customers</response>
+            <response code="400">Bad request</response> 
+        </member>
+        <member name="M:TestSoftimApi.Controllers.CustomersController.ReadCustomersAsync(TestSoftimApi.Models.FromToModel)">
+             <summary>
+             Returns a list of customers by date from-to
+             </summary>
+             <remarks>
+             Sample request: Object FromToModel
+            
+                 {
+                    "from": "2020-11-30T18:38:31.874Z",
+                    "to": "2020-11-30T18:38:31.874Z"
+                 }
+                 
+             or
+             
+                 {
+                    "from": "2020-11-30T18:38:31.874Z"
+                 }
+                 
+             or
+             
+                 {
+                    "to": "2020-11-30T18:38:31.874Z"
+                 }
+            
+             </remarks>
+             <param name="condition">DateTime from and to format json</param>
+             <returns>No content</returns>
+             <response code="200">Returns a list of customers</response>
+             <response code="400">Bad request</response> 
+        </member>
+        <member name="M:TestSoftimApi.Controllers.CustomersController.InputCustomerAsync(TestSoftimApi.Models.CustomersForInsertModel)">
+             <summary>
+             Insert new customer into system
+             </summary>
+             <remarks>
+             Sample request: Object CustomersForInsertModel
+            
+                 {
+                    "age": "customer age",
+                    "wasSatisfied": "if the customer was satisfied",
+                    "sex": "customer's gender"
+                 }
+            
+             </remarks>
+             <param name="customer">New customer</param>
+             <returns>No content</returns>
+             <response code="204">A response as creation of customers</response>
+             <response code="400">Bad request</response>  
+        </member>
+        <member name="M:TestSoftimApi.Controllers.CustomersController.InputCustomersAsync(System.Collections.Generic.List{TestSoftimApi.Models.CustomersForInsertModel})">
+             <summary>
+             Adding more new customers
+             </summary>
+             <remarks>
+             Sample request: Object List of CustomersForInsertModel
+            
+             [
+                 {
+                    "age": "customer age",
+                    "wasSatisfied": "if the customer was satisfied",
+                    "sex": "customer's gender"
+                 },
+                 {
+                    "age": "customer age",
+                    "wasSatisfied": "if the customer was satisfied",
+                    "sex": "customer's gender"
+                 }
+             ]
+            
+             </remarks>
+             <param name="customers">New customer</param>
+             <returns>No content</returns>
+             <response code="204">A response as creation of customers</response>
+             <response code="400">Bad request</response>  
+        </member>
+        <member name="P:TestSoftimApi.Models.CustomersForInsertModel.Age">
+            <summary>
+            customer age
+            </summary>
+        </member>
+        <member name="P:TestSoftimApi.Models.CustomersForInsertModel.WasSatisfied">
+            <summary>
+            if the customer was satisfied
+            </summary>
+        </member>
+        <member name="P:TestSoftimApi.Models.CustomersForInsertModel.Sex">
+            <summary>
+            customer's gender
+            </summary>
+        </member>
+    </members>
+</doc>
